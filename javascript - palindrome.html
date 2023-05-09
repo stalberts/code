@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+function palindrome()
+{
+var rem,temp=final=0;
+var n=prompt("Enter the Number:");
+temp=n;
+while(n>0)
+{
+rem=n%10;
+final=(final*10)+rem;
+n = Math.floor(n / 10);
+}
+if(final==temp)
+{
+document.write("The number is palindrome");
+
+}
+else
+{
+document.write("The number is not palindrome");
+}
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="palindrome()" value="palindrome">
+</body>
+</html>
