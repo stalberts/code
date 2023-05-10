@@ -1,0 +1,170 @@
+index.php
+<html>
+<head>
+<title>STRING OPERATIONS</title>
+</head>
+<body bgcolor="pink">
+<h1><b><font size=20>STRING OPERATIONS</font></h1>
+<ul>
+<li><a href="compare.php"><b>strcmp()</a><strong></strong></li>
+<li><a href="replace.php"><b>str_replace()</a><strong></strong></li>
+<li><a href="rev.php"><b>strrev()</a><strong></strong></li>
+<li><a href="lower.php"><b>strtolower()</a><strong></strong></li>
+<li><a href="upper.php"><b>strtoupper()</a><strong></strong></li>
+</ul>
+</body>
+</html>
+lower.php
+<?php
+if(isset($_POST["submit"]))
+{
+$s1=$_POST["t1"];
+echo "CASE CHANGE TO LOWER<hr>";
+echo "String after changing case is: ".strtolower($s1);
+}
+else
+
+{
+?>
+<b><h1><font color="violet">CASE CHANGE</h1></font></b>
+<hr>
+<form action="lower.php" method="post">
+<table>
+<tr><td>Enter string to change case:</td><td><input type="text" name="t1" 
+value="" required></td></tr>
+<tr><th colspan=2><input type="submit" name="submit" 
+value="Submit"></th></tr>
+</table>
+</form>
+</body>
+</html>
+<?php
+}
+?>
+replace.php
+<?php
+if(isset($_POST["submit"]))
+{
+$s1=$_POST["t1"];
+$s2=$_POST["t2"];
+$s3=$_POST["t3"];
+echo "STRING REPLACEMENT<hr>";
+$s4=str_replace($s2,$s3,$s1);
+echo "Replaced string is : $s4";
+}
+else
+{
+?>
+<b><h1><font color="violet">STRING REPLACEMENT</h1></font></b>
+<hr>
+<form action="replace.php" method="post">
+<table>
+<tr><td>Enter the main string:</td><td><input type="text" name="t1" value="" 
+required></td></tr>
+<tr><td>Enter string to be replaced:</td><td><input type="text" name="t2" value="" 
+required></td></tr>
+<tr><td>Enter string to which it is replaced:</td><td><input type="text" name="t3" 
+value="" required></td></tr>
+<tr><th colspan=2><input type="submit" name="submit" 
+value="Submit"></th></tr>
+</table>
+</form>
+</body>
+</html>
+<?php
+}
+?>
+rev.php
+<?php
+if(isset($_POST["submit"]))
+{
+$s1=$_POST["t1"];
+echo "STRING REVERSE<hr>";
+$s4=strrev($s1);
+echo "Reversed string is : $s4";
+}
+else
+{
+?>
+<b><h1><font color="violet">STRING REVERSE</h1></font></b>
+<hr>
+<form action="rev.php" method="post">
+<table>
+<tr><td>Enter string to be reversed:</td><td><input type="text" name="t1" value="" 
+required></td></tr>
+<tr><th colspan=2><input type="submit" name="submit" 
+value="Submit"></th></tr>
+</table>
+</form>
+</body>
+</html>
+<?php
+}
+?>
+compare.php
+<?php
+if(isset($_POST["submit"]))
+{
+$s1=$_POST["t1"];
+$s2=$_POST["t2"];
+echo "STRING COMPARISON<hr>";
+if(strcmp($s1,$s2)==0)
+{
+echo "Two strings are equal";
+}
+else if(strcmp($s1,$s2)<0)
+{
+echo "$s1 is smaller than $s2";
+}
+else
+{
+echo "$s2 is smaller than $s1";
+}
+}
+
+else
+{
+?>
+<b><h1><font color="violet">STRING COMPARISON</h1></font></b>
+<hr>
+<form action="compare.php" method="post">
+<table>
+<tr><td>Enter first string:</td><td><input type="text" name="t1" value="" 
+required></td></tr>
+<tr><td>Enter second string:</td><td><input type="text" name="t2" value="" 
+required></td></tr>
+<tr><th colspan=2><input type="submit" name="submit" 
+value="Submit"></th></tr>
+</table>
+</form>
+</body>
+</html>
+<?php
+}
+?>
+upper.php
+<?php
+if(isset($_POST["submit"]))
+{
+$s1=$_POST["t1"];
+echo "CASE CHANGE TO UPPER<hr>";
+echo "String after changing case is: ".strtoupper($s1);
+}
+else
+{
+?>
+<b><h1><font color="violet">CASE CHANGE</h1></font></b>
+<hr>
+<form action="upper.php" method="post">
+<table>
+<tr><td>Enter string to change case:</td><td><input type="text" name="t1" 
+value="" required></td></tr>
+<tr><th colspan=2><input type="submit" name="submit" 
+value="Submit"></th></tr>
+</table>
+</form>
+</body>
+</html>
+<?php
+}
+?>
